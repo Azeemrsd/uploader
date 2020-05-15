@@ -1,1 +1,18 @@
-<p>todo works!</p>
+<div class="container">
+  <div class="row">
+    <h4>Add a TODO</h4>
+    <form (ngSubmit)="addTodo()">
+    <div [formGroup]="todoForm">
+      <input class="form-control" type="text" name="" formControlName="todo">
+      <button type="submit" class="btn btn-success">Save</button>
+    </div>
+<div class="row">
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let list of todos">{{list}}</li>
+
+  </ul>
+</div>
+  </form>
+
+  </div>
+</div>
