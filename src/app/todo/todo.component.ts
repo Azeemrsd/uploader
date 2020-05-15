@@ -16,7 +16,19 @@ todo :['',Validators.required],
   ngOnInit() {
   }
 addTodo(){
-  this.todos.push(this.todoForm.get('todo').value)
+  this.todos.unshift(this.todoForm.get('todo').value)
   this.todoForm.reset()
+}
+editTodo(item){
+this.todoForm.patchValue({
+  todo:this.todos[item]
+})
+this.todos.splice(item,1)
+}
+deleteTodo(item){
+  this.todos.splice(item,1)
+}
+clearAllTodo(){
+  this.todos =[]
 }
 }

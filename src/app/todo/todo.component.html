@@ -1,18 +1,27 @@
-<div class="container">
-  <div class="row">
-    <h4>Add a TODO</h4>
-    <form (ngSubmit)="addTodo()">
-    <div [formGroup]="todoForm">
-      <input class="form-control" type="text" name="" formControlName="todo">
-      <button type="submit" class="btn btn-success">Save</button>
+
+  <div class="container my-2">
+  <div class="card">
+    <div class="card-header">
+     Add a new Todo
     </div>
-<div class="row">
-  <ul class="list-group">
-    <li class="list-group-item" *ngFor="let list of todos">{{list}}</li>
+    <div class="card-body">
+      <form (ngSubmit)="addTodo()">
+        <div [formGroup]="todoForm">
+          <input class="form-control" type="text"  formControlName="todo" placeholder="Add a todo">
+          <button type="submit" class="btn btn-success my-2" [disabled]="todoForm.invalid">Save</button>
+          <button (click)="clearAllTodo()" class="btn btn-danger mx-2 my-2" [disabled]="todos.length ==0">Clear All</button>
+        </div>
+    <div class="row">
+    </div>
+    </form>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <ul class="list-group my-2">
+    <li class="list-group-item" *ngFor="let list of todos;let i=index">{{list}}
+      <i class="fa fa-trash m-2" style="float:right;color:red;font-size: 25px; cursor: pointer;" (click)="deleteTodo(i)"></i>
+      <i class="fa fa-edit m-2" style="float:right;color:blue;font-size:25px;cursor: pointer;" (click)="editTodo(i)"></i></li>
 
   </ul>
-</div>
-  </form>
-
-  </div>
 </div>
