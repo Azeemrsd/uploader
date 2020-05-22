@@ -10,6 +10,9 @@ export class DiaryComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $(document).ready(function(){
+      $('#my-textarea').summernote();
+    })
   }
 
 }

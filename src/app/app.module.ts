@@ -10,12 +10,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { FileUploadComponent } from './file-upload/file-upload.component';
 import { TodoComponent } from './todo/todo.component';
 import { DiaryComponent } from './diary/diary.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const appRoutes:Routes =[
   { path:'' ,component: MenuComponent},
   { path:'file-upload' ,component: FileUploadComponent},
   { path:'todo' ,component: TodoComponent},
   { path:'diary' ,component: DiaryComponent},
+  {path:'not-found',component:NotFoundComponent},
+  {path:'**',redirectTo:'not-found'}
 ]
 @NgModule({
   declarations: [
@@ -24,7 +27,8 @@ const appRoutes:Routes =[
     MenuComponent,
     TodoComponent,
     DiaryComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    NotFoundComponent
 
   ],
   imports: [

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as $ from 'jquery'
 @Component({
   selector: 'app-file-upload',
   templateUrl: './file-upload.component.html',
@@ -10,6 +10,7 @@ export class FileUploadComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }
